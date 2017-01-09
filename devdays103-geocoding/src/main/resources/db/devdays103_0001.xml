@@ -1,0 +1,28 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+	xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+	<changeSet author="European Dynamics SA" id="devdays103_0001">
+        <sql>
+            create table Business(
+                id varchar(36) NOT NULL,
+                name varchar(255) NOT NULL,
+                address varchar(255) NOT NULL,
+                CONSTRAINT pk_BusinessID PRIMARY KEY (id)
+            );
+        </sql>
+
+		<sql>
+            insert into Business(id, name, address)
+            values('5b68cb27-78e1-4bd3-8b37-8ae492c430a5', 'ED-ATH', 'Athens, Greece');
+
+            insert into Business(id, name, address)
+            values('1f754b23-a6bd-42cd-b88e-3e91937e3a76', 'ED-BEL', 'Brussels, Belgium');
+
+            insert into Business(id, name, address)
+            values('af6d38fe-45c7-4712-9294-69bdc56d3b0c', 'ED-UK', 'London, UK');
+		</sql>
+	</changeSet>
+	
+</databaseChangeLog>

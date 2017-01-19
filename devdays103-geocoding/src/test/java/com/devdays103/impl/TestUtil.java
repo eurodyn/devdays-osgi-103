@@ -49,7 +49,6 @@ public class TestUtil {
 			connection.close();
 			return true;
 		} catch (SQLException e) {
-			e.printStackTrace();
 			return false;
 		} finally {
 			if (connection != null)

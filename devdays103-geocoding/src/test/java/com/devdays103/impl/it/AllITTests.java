@@ -50,7 +50,7 @@ public class AllITTests {
 		System.out.println("DB container started.");
 		System.out.println("Waiting for DB bootstrap.");
 		while (!TestUtil.isMySQLAcceptingConnection(
-				"jdbc:mysql://127.0.0.1:3307/sys", "root", "root")) {
+				"jdbc:mysql://127.0.0.1:3307/sys?useSSL=false", "root", "root")) {
 			try {
 				System.out.println("waiting...");
 				Thread.sleep(1000);

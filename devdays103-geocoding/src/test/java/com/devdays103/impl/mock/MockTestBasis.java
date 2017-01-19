@@ -47,6 +47,7 @@ public class MockTestBasis {
 				copyMockConf("etc/org.ops4j.datasource-devdays103.cfg"),
 				logLevel(LogLevelOption.LogLevel.INFO),
 				configureConsole().ignoreLocalConsole(),
+				configureConsole().ignoreRemoteShell(),
 				mavenBundle("org.mockito", "mockito-all", "1.10.19"),
 				features(projectFeaturesRepo, "devdays103-geocoding-deps"),
 				features(projectFeaturesRepo, "devdays103-geocoding")

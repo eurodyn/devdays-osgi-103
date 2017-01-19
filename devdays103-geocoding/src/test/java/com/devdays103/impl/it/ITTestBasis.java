@@ -48,6 +48,7 @@ public class ITTestBasis {
 				copyITConf("etc/org.ops4j.datasource-devdays103.cfg"),
 				logLevel(LogLevelOption.LogLevel.INFO),
 				configureConsole().ignoreLocalConsole(),
+				configureConsole().ignoreRemoteShell(),
 				features(projectFeaturesRepo, "devdays103-geocoding-deps"),
 				features(projectFeaturesRepo, "pax-jdbc-mysql"),
 				features(projectFeaturesRepo, "devdays103-geocoding")

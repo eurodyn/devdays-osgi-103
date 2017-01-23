@@ -20,7 +20,7 @@ import java.util.UUID;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 		AddressbookServiceImplITTest.class,
-		GeocodingServiceImplITTest.class
+		//GeocodingServiceImplITTest.class
 })
 public class AllITTests {
 	private static DockerClient dockerClient;
@@ -40,7 +40,7 @@ public class AllITTests {
 		portBindings.bind(ExposedPort.tcp(DB_PORT), Ports.Binding.bindPort(DB_PORT + 1));
 		String containerName = "TEST-" + UUID.randomUUID().toString();
 		CreateContainerResponse createContainerResponse = dockerClient.createContainerCmd(DB_IMAGE)
-				.withExposedPorts(ExposedPort.tcp(DB_PORT+1))
+				.withExposedPorts(ExposedPort.tcp(DB_PORT + 1))
 				.withPortBindings(portBindings)
 				.withName(containerName)
 				.withEnv("MYSQL_ROOT_PASSWORD=root")

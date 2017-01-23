@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(PaxExam.class)
 @ExamReactorStrategy(PerMethod.class)
-public class AddressbookServiceImplITTest extends ITTestBasis {
+public class AddressbookServiceImplITTest extends ITTestConf {
 	@Inject
 	AddressbookService addressbookService;
 

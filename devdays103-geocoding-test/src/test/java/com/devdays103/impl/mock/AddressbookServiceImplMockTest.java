@@ -16,7 +16,7 @@ import static org.mockito.Mockito.spy;
 
 @RunWith(PaxExam.class)
 @ExamReactorStrategy(PerMethod.class)
-public class AddressbookServiceImplMockTest extends MockTestBasis {
+public class AddressbookServiceImplMockTest extends MockTestConf {
 	@Inject
 	AddressbookService addressbookService;
 

@@ -38,6 +38,7 @@
         <module>../devdays103-basic</module>
         <module>../devdays103-geocoding</module>
         <module>../devdays103-features</module>
+        <module>../devdays103-geocoding-test</module>
     </modules>
 
     <build>

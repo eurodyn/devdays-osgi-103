@@ -16,7 +16,7 @@ import static org.mockito.Mockito.spy;
 
 @RunWith(PaxExam.class)
 @ExamReactorStrategy(PerClass.class)
-public class GeocodingServiceImplMockTest extends MockTestBasis {
+public class GeocodingServiceImplMockTest extends MockTestConf {
 	@Inject
 	GeocodingService geocodingService;
 

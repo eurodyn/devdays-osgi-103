@@ -13,7 +13,7 @@ import javax.inject.Inject;
 
 @RunWith(PaxExam.class)
 @ExamReactorStrategy(PerClass.class)
-public class GeocodingServiceImplITTest extends ITTestBasis {
+public class GeocodingServiceImplITTest extends ITTestConf {
 	@Inject
 	GeocodingService geocodingService;
 

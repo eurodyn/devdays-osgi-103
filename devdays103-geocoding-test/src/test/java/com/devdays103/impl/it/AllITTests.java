@@ -20,7 +20,7 @@ import java.util.UUID;
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
 		AddressbookServiceImplITTest.class,
-		//GeocodingServiceImplITTest.class
+		GeocodingServiceImplITTest.class
 })
 public class AllITTests {
 	private static DockerClient dockerClient;

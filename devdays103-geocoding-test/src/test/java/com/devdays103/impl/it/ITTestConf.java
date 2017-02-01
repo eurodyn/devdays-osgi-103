@@ -1,4 +1,4 @@
-package com.devdays103.impl.mock;
+package com.devdays103.impl.it;
 
 import com.devdays103.impl.TestUtil;
 import org.ops4j.pax.exam.Configuration;
@@ -9,14 +9,14 @@ import org.ops4j.pax.exam.options.MavenUrlReference;
 
 import java.io.File;
 
-import static com.devdays103.impl.TestUtil.copyMockConf;
+import static com.devdays103.impl.TestUtil.copyITConf;
 import static org.ops4j.pax.exam.CoreOptions.maven;
-import static org.ops4j.pax.exam.CoreOptions.mavenBundle;
 import static org.ops4j.pax.exam.karaf.options.KarafDistributionOption.*;
 
-public class MockTestConf {
+public abstract class ITTestConf {
 	@Configuration
-	public Option[] config() {
+	public static Option[] config() {
+
 		MavenArtifactUrlReference karafUrl = maven()
 				.groupId("org.apache.karaf")
 				.artifactId("apache-karaf")
@@ -36,15 +36,16 @@ public class MockTestConf {
 						.unpackDirectory(new File("target", "exam"))
 						.useDeployFolder(false),
 				keepRuntimeFolder(),
-				copyMockConf("etc/com.eurodyn.qlack2.util.liquibase.cfg"),
-				copyMockConf("etc/org.ops4j.datasource-devdays103.cfg"),
-				copyMockConf("etc/org.ops4j.pax.url.mvn.cfg"),
+				copyITConf("etc/com.eurodyn.qlack2.util.liquibase.cfg"),
+				copyITConf("etc/org.ops4j.datasource-devdays103.cfg"),
+				copyITConf("etc/org.ops4j.pax.url.mvn.cfg"),
 				logLevel(LogLevelOption.LogLevel.INFO),
 				configureConsole().ignoreLocalConsole(),
 				configureConsole().ignoreRemoteShell(),
-				mavenBundle("org.mockito", "mockito-all", "1.10.19"),
 				features(projectFeaturesRepo, "devdays103-geocoding-deps"),
+				features(projectFeaturesRepo, "pax-jdbc-mysql"),
 				features(projectFeaturesRepo, "devdays103-geocoding")
 		};
 	}
+
 }
